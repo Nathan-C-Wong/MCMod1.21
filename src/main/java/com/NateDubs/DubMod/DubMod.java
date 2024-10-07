@@ -1,6 +1,8 @@
 package com.NateDubs.DubMod;
 
+import com.NateDubs.DubMod.item.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -35,6 +37,8 @@ public class DubMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -50,7 +54,11 @@ public class DubMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.DUBIUM);
+            event.accept(ModItems.RAW_DUBIUM);
+            event.accept(ModItems.MANFACE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
