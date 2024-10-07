@@ -1,4 +1,4 @@
-package com.NateDubs.tutorialmod;
+package com.NateDubs.DubMod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,8 +16,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(TutorialMod.MOD_ID)
-public class TutorialMod
+@Mod(DubMod.MOD_ID)
+public class DubMod
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "natedubs";
@@ -25,7 +25,7 @@ public class TutorialMod
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
     
-    public TutorialMod()
+    public DubMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
