@@ -5,7 +5,7 @@
 
 v0.0.2 (10/7/24)
 * Added three items
-  * 2 Dub items
+  * 2 Dub items (Raw and Smelted Versions)
   * Manface
 * Started working on first block
 
