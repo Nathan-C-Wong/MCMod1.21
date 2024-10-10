@@ -1,5 +1,6 @@
 package com.NateDubs.DubMod;
 
+import com.NateDubs.DubMod.block.ModBlocks;
 import com.NateDubs.DubMod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,6 +39,7 @@ public class DubMod
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -58,6 +60,9 @@ public class DubMod
             event.accept(ModItems.DUBIUM);
             event.accept(ModItems.RAW_DUBIUM);
             event.accept(ModItems.MANFACE);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DUBIUM_BLOCK);
         }
     }
 
